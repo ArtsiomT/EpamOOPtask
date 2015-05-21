@@ -1,0 +1,4 @@
+[ INFO] 20.05.2015 22:10:01 [main] by.epam.tphierarchy.run.Runner  - There are 203000people uses Velcom
+[ INFO] 20.05.2015 22:10:23 [main] by.epam.tphierarchy.run.Runner  - There are 203000 people uses Velcom
+[ INFO] 20.05.2015 22:10:51 [main] by.epam.tphierarchy.run.Runner  - There are 203000 of people uses Velcom
+[ INFO] 20.05.2015 22:11:14 [main] by.epam.tphierarchy.run.Runner  - There are 203000 of people uses Velcom

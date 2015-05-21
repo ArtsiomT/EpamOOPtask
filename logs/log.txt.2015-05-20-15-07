@@ -1,0 +1,5 @@
+[ INFO] 20.05.2015 15:00:58 [main] by.epam.tphierarchy.util.Logging  - Hello Log
+[ INFO] 20.05.2015 15:06:57 [main] by.epam.tphierarchy.util.Logging  - Hello Log
+[ERROR] 20.05.2015 15:06:57 [main] by.epam.tphierarchy.util.Logging  - ВСЁ ПРОПАЛО!
+[ INFO] 20.05.2015 15:07:57 [main] by.epam.tphierarchy.util.Logging  - Hello Log
+[ERROR] 20.05.2015 15:07:57 [main] by.epam.tphierarchy.util.Logging  - ВСЁ ПРОПАЛО!
