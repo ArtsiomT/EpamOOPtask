@@ -11,12 +11,6 @@ import org.apache.log4j.xml.DOMConfigurator;
 public class InternetTariffPlan extends TariffPlan {
     private int freeTraffik;
 
-    private final Logger LOGGER = Logger.getLogger(InternetTariffPlan.class);
-
-    static {
-        new DOMConfigurator().doConfigure("config/log4j.xml", LogManager.getLoggerRepository());
-    }
-
     public InternetTariffPlan(int licencseFee, int talkCost, int smsCost, int freeTraffik, int peopleUsed) throws LogicalException {
         super(licencseFee,talkCost,smsCost,peopleUsed);
     }

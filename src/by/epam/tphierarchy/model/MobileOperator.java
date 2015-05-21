@@ -1,6 +1,7 @@
 package by.epam.tphierarchy.model;
 
 import by.epam.tphierarchy.model.exceptions.LogicalException;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 
@@ -10,12 +11,11 @@ import java.util.ArrayList;
 public class MobileOperator {
 
     private String name;
-
-    ArrayList<TariffPlan> tariffPlans;
+    private ArrayList<TariffPlan> tariffPlans;
 
     public MobileOperator(String name) throws LogicalException {
         setName(name);
-        tariffPlans = new ArrayList<TariffPlan>();
+        tariffPlans = new ArrayList<>();
     }
 
     public String getName() {
@@ -23,7 +23,7 @@ public class MobileOperator {
     }
 
     public void setName(String name) throws LogicalException {
-        if (!name.equals("") && !name.equals(null)){
+        if (name != null && !name.isEmpty()){
             this.name = name;
         } else {
             throw new LogicalException();

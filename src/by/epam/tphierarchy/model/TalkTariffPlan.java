@@ -12,12 +12,6 @@ public class TalkTariffPlan extends TariffPlan {
 
     private int freeMinutes;
 
-    private final Logger LOGGER = Logger.getLogger(TalkTariffPlan.class);
-
-    static {
-        new DOMConfigurator().doConfigure("config/log4j.xml", LogManager.getLoggerRepository());
-    }
-
     public TalkTariffPlan(int licencseFee, int talkCost, int smsCost, int freeMinutes, int peopleUsed) throws LogicalException {
         super(licencseFee,talkCost,smsCost, peopleUsed);
         this.freeMinutes = freeMinutes;

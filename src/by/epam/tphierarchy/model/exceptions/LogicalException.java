@@ -9,14 +9,8 @@ import org.apache.log4j.xml.DOMConfigurator;
  */
 public class LogicalException extends Exception {
 
-    private final Logger LOGGER = Logger.getLogger(LogicalException.class);
-
-    static {
-        new DOMConfigurator().doConfigure("config/log4j.xml", LogManager.getLoggerRepository());
-    }
 
     public LogicalException() {
-        LOGGER.error("Exception Interrupted");
     }
 
 

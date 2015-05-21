@@ -8,17 +8,19 @@ import org.apache.log4j.xml.DOMConfigurator;
 /**
  * Created by aterehovich on 5/20/15.
  */
+
+
+//TODO abstract class
 public class TariffPlan {
     private int licencseFee;
     private int talkCost;
     private int smsCost;
     private int peopleUsed;
 
+    //TODO name of Tariff Plan
+
     private static final Logger LOGGER = Logger.getLogger(TariffPlan.class);
 
-    static {
-        new DOMConfigurator().doConfigure("config/log4j.xm", LogManager.getLoggerRepository());
-    }
 
     //test commit
 
