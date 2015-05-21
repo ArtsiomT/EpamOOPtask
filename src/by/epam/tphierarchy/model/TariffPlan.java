@@ -17,10 +17,10 @@ public class TariffPlan {
     private static final Logger LOGGER = Logger.getLogger(TariffPlan.class);
 
     static {
-        new DOMConfigurator().doConfigure("config/log4j.xml", LogManager.getLoggerRepository());
+        new DOMConfigurator().doConfigure("config/log4j.xm", LogManager.getLoggerRepository());
     }
 
-
+    //test commit
 
     public TariffPlan(int licencseFee, int talkCost, int smsCost, int peopleUsed) throws LogicalException {
         setLicencseFee(licencseFee);
