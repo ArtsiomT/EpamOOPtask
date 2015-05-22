@@ -1,9 +1,6 @@
 package by.epam.tphierarchy.model;
 
-import by.epam.tphierarchy.model.exceptions.LogicalException;
-import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
 
 /**
  * Created by aterehovich on 5/20/15.
@@ -11,20 +8,21 @@ import org.apache.log4j.xml.DOMConfigurator;
 
 
 //TODO abstract class
-public class TariffPlan {
+public abstract class AbstractTariffPlan {
     private int licencseFee;
     private int talkCost;
     private int smsCost;
     private int peopleUsed;
+    private String name;
 
-    //TODO name of Tariff Plan
 
-    private static final Logger LOGGER = Logger.getLogger(TariffPlan.class);
+    private static final Logger LOGGER = Logger.getLogger(AbstractTariffPlan.class);
 
 
     //test commit
 
-    public TariffPlan(int licencseFee, int talkCost, int smsCost, int peopleUsed) throws LogicalException {
+    public AbstractTariffPlan(String name, int licencseFee, int talkCost, int smsCost, int peopleUsed) throws LogicalException {
+        setName(name);
         setLicencseFee(licencseFee);
         setTalkCost(talkCost);
         setSmsCost(smsCost);
@@ -79,12 +77,22 @@ public class TariffPlan {
         }
     }
 
+    public String getName(){
+        return this.name;
+    }
+
+    public void setName(String name){
+        if(name!=null && !name.isEmpty()){
+            this.name = name;
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TariffPlan that = (TariffPlan) o;
+        AbstractTariffPlan that = (AbstractTariffPlan) o;
 
         if (licencseFee != that.licencseFee) return false;
         if (talkCost != that.talkCost) return false;
@@ -104,7 +112,7 @@ public class TariffPlan {
 
     @Override
     public String toString() {
-        return "TariffPlan{" +
+        return "AbstractTariffPlan{" +
                 "licencseFee=" + licencseFee +
                 ", talkCost=" + talkCost +
                 ", smsCost=" + smsCost +

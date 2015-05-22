@@ -1,18 +1,14 @@
 package by.epam.tphierarchy.model;
 
-import by.epam.tphierarchy.model.exceptions.LogicalException;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
-
 /**
  * Created by aterehovich on 5/20/15.
  */
-public class InternetTariffPlan extends TariffPlan {
+public class InternetTariffPlan extends AbstractTariffPlan {
     private int freeTraffik;
 
-    public InternetTariffPlan(int licencseFee, int talkCost, int smsCost, int freeTraffik, int peopleUsed) throws LogicalException {
-        super(licencseFee,talkCost,smsCost,peopleUsed);
+    public InternetTariffPlan(String name, int licencseFee, int talkCost, int smsCost, int freeTraffik, int peopleUsed) throws LogicalException {
+        super(name,licencseFee,talkCost,smsCost,peopleUsed);
+        setFreeTraffik(freeTraffik);
     }
 
     public int getFreeTraffik() {

@@ -1,10 +1,10 @@
-[ INFO] 20.05.2015 15:00:58 [main] by.epam.tphierarchy.util.Logging  - Hello Log
-[ INFO] 20.05.2015 15:06:57 [main] by.epam.tphierarchy.util.Logging  - Hello Log
-[ERROR] 20.05.2015 15:06:57 [main] by.epam.tphierarchy.util.Logging  - ВСЁ ПРОПАЛО!
-[ INFO] 20.05.2015 15:07:57 [main] by.epam.tphierarchy.util.Logging  - Hello Log
-[ERROR] 20.05.2015 15:07:57 [main] by.epam.tphierarchy.util.Logging  - ВСЁ ПРОПАЛО!
-[ INFO] 20.05.2015 15:08:44 [main] by.epam.tphierarchy.util.Logging  - Hello Log
-[ERROR] 20.05.2015 15:08:44 [main] by.epam.tphierarchy.util.Logging  - ВСЁ ПРОПАЛО!
+[ INFO] 20.05.2015 15:00:58 [main] by.epam.tphierarchy.action.Logging  - Hello Log
+[ INFO] 20.05.2015 15:06:57 [main] by.epam.tphierarchy.action.Logging  - Hello Log
+[ERROR] 20.05.2015 15:06:57 [main] by.epam.tphierarchy.action.Logging  - ВСЁ ПРОПАЛО!
+[ INFO] 20.05.2015 15:07:57 [main] by.epam.tphierarchy.action.Logging  - Hello Log
+[ERROR] 20.05.2015 15:07:57 [main] by.epam.tphierarchy.action.Logging  - ВСЁ ПРОПАЛО!
+[ INFO] 20.05.2015 15:08:44 [main] by.epam.tphierarchy.action.Logging  - Hello Log
+[ERROR] 20.05.2015 15:08:44 [main] by.epam.tphierarchy.action.Logging  - ВСЁ ПРОПАЛО!
 [ INFO] 20.05.2015 22:08:53 [main] by.epam.tphierarchy.run.Runner  - There are 203000people uses Velcom
 [ INFO] 20.05.2015 22:10:01 [main] by.epam.tphierarchy.run.Runner  - There are 203000people uses Velcom
 [ INFO] 20.05.2015 22:10:23 [main] by.epam.tphierarchy.run.Runner  - There are 203000 people uses Velcom

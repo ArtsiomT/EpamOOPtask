@@ -1,7 +1,2 @@
-[ INFO] 21.05.2015 10:22:57 [main] by.epam.tphierarchy.run.Runner  - There are 203000 of people uses Velcom
-[ INFO] 21.05.2015 10:24:09 [main] by.epam.tphierarchy.run.Runner  - There are 203000 of people uses Velcom
-[ INFO] 21.05.2015 10:26:24 [main] by.epam.tphierarchy.model.TariffPlan  - New Tariff Plan was created
-[ INFO] 21.05.2015 10:26:24 [main] by.epam.tphierarchy.model.TariffPlan  - New Tariff Plan was created
-[ INFO] 21.05.2015 10:26:24 [main] by.epam.tphierarchy.model.TariffPlan  - New Tariff Plan was created
-[ INFO] 21.05.2015 10:26:24 [main] by.epam.tphierarchy.model.TariffPlan  - New Tariff Plan was created
-[ INFO] 21.05.2015 10:26:24 [main] by.epam.tphierarchy.run.Runner  - There are 203000 of people uses Velcom
+[ERROR] 22.05.2015 18:14:48 [main] by.epam.tphierarchy.creator.Creator  - File results/result.txt not found!
+[ERROR] 22.05.2015 18:15:45 [main] by.epam.tphierarchy.creator.Creator  - File results/result.txt not found!
