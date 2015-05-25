@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
 
 
 //TODO abstract class
-public abstract class AbstractTariffPlan {
+public abstract class AbstractTariffPlan implements Comparable {
     private int licencseFee;
     private int talkCost;
     private int smsCost;
@@ -46,7 +46,7 @@ public abstract class AbstractTariffPlan {
     }
 
     public void setTalkCost(int talkCost) throws LogicalException {
-        if (talkCost > 0){
+        if (talkCost > 0) {
             this.talkCost = talkCost;
         } else {
             throw new LogicalException();
@@ -58,7 +58,7 @@ public abstract class AbstractTariffPlan {
     }
 
     public void setSmsCost(int smsCost) throws LogicalException {
-        if (smsCost > 0){
+        if (smsCost > 0) {
             this.smsCost = smsCost;
         } else {
             throw new LogicalException();
@@ -70,19 +70,19 @@ public abstract class AbstractTariffPlan {
     }
 
     public void setPeopleUsed(int peopleUsed) throws LogicalException {
-        if (peopleUsed > 0){
+        if (peopleUsed > 0) {
             this.peopleUsed = peopleUsed;
         } else {
             throw new LogicalException();
         }
     }
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
-    public void setName(String name){
-        if(name!=null && !name.isEmpty()){
+    public void setName(String name) {
+        if (name != null && !name.isEmpty()) {
             this.name = name;
         }
     }
@@ -108,6 +108,18 @@ public abstract class AbstractTariffPlan {
         result = 31 * result + smsCost;
         result = 31 * result + peopleUsed;
         return result;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        AbstractTariffPlan entry = (AbstractTariffPlan) o;
+
+        int result = this.getLicencseFee() - ((AbstractTariffPlan) o).getLicencseFee();
+        if (result != 0) {
+            return result / Math.abs(result);
+        }
+        return 0;
+
     }
 
     @Override
