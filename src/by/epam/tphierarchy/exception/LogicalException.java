@@ -1,4 +1,4 @@
-package by.epam.tphierarchy.model;
+package by.epam.tphierarchy.exception;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;

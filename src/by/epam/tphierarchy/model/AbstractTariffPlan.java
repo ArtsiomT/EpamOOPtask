@@ -1,5 +1,6 @@
 package by.epam.tphierarchy.model;
 
+import by.epam.tphierarchy.exception.LogicalException;
 import org.apache.log4j.Logger;
 
 /**
@@ -7,25 +8,20 @@ import org.apache.log4j.Logger;
  */
 
 
-//TODO abstract class
-public abstract class AbstractTariffPlan implements Comparable {
+public abstract class AbstractTariffPlan implements Comparable<AbstractTariffPlan> {
     private int licencseFee;
-    private int talkCost;
-    private int smsCost;
     private int peopleUsed;
     private String name;
 
 
-    private static final Logger LOGGER = Logger.getLogger(AbstractTariffPlan.class);
+    private final static Logger LOGGER = Logger.getLogger(AbstractTariffPlan.class);
 
 
     //test commit
 
-    public AbstractTariffPlan(String name, int licencseFee, int talkCost, int smsCost, int peopleUsed) throws LogicalException {
+    public AbstractTariffPlan(String name, int licencseFee, int peopleUsed) throws LogicalException {
         setName(name);
         setLicencseFee(licencseFee);
-        setTalkCost(talkCost);
-        setSmsCost(smsCost);
         setPeopleUsed(peopleUsed);
     }
 
@@ -36,30 +32,6 @@ public abstract class AbstractTariffPlan implements Comparable {
     public void setLicencseFee(int licencseFee) throws LogicalException {
         if (licencseFee > 0) {
             this.licencseFee = licencseFee;
-        } else {
-            throw new LogicalException();
-        }
-    }
-
-    public int getTalkCost() {
-        return talkCost;
-    }
-
-    public void setTalkCost(int talkCost) throws LogicalException {
-        if (talkCost > 0) {
-            this.talkCost = talkCost;
-        } else {
-            throw new LogicalException();
-        }
-    }
-
-    public int getSmsCost() {
-        return smsCost;
-    }
-
-    public void setSmsCost(int smsCost) throws LogicalException {
-        if (smsCost > 0) {
-            this.smsCost = smsCost;
         } else {
             throw new LogicalException();
         }
@@ -94,9 +66,10 @@ public abstract class AbstractTariffPlan implements Comparable {
 
         AbstractTariffPlan that = (AbstractTariffPlan) o;
 
-        if (licencseFee != that.licencseFee) return false;
-        if (talkCost != that.talkCost) return false;
-        if (smsCost != that.smsCost) return false;
+        if (licencseFee != that.licencseFee){
+            return false;
+        }
+
         return peopleUsed == that.peopleUsed;
 
     }
@@ -104,17 +77,17 @@ public abstract class AbstractTariffPlan implements Comparable {
     @Override
     public int hashCode() {
         int result = licencseFee;
-        result = 31 * result + talkCost;
-        result = 31 * result + smsCost;
         result = 31 * result + peopleUsed;
         return result;
     }
 
     @Override
-    public int compareTo(Object o) {
-        AbstractTariffPlan entry = (AbstractTariffPlan) o;
+    public int compareTo(AbstractTariffPlan o) {
+        if (o==null){
+            return -1;
+        }
+        int result = this.getLicencseFee() - o.getLicencseFee();
 
-        int result = this.getLicencseFee() - ((AbstractTariffPlan) o).getLicencseFee();
         if (result != 0) {
             return result / Math.abs(result);
         }
@@ -124,11 +97,9 @@ public abstract class AbstractTariffPlan implements Comparable {
 
     @Override
     public String toString() {
-        return "AbstractTariffPlan{" +
-                "licencseFee=" + licencseFee +
-                ", talkCost=" + talkCost +
-                ", smsCost=" + smsCost +
-                ", peopleUsed=" + peopleUsed +
-                '}';
+        return "AbstractTariffPlan: " +
+                "name=" + name +
+                ", licencseFee=" + licencseFee +
+                ", peopleUsed=" + peopleUsed;
     }
 }

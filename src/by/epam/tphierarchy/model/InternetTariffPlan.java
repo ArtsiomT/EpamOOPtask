@@ -1,14 +1,18 @@
 package by.epam.tphierarchy.model;
 
+import by.epam.tphierarchy.exception.LogicalException;
+
 /**
  * Created by aterehovich on 5/20/15.
  */
 public class InternetTariffPlan extends AbstractTariffPlan {
     private int freeTraffik;
+    private int megabyteCost;
 
-    public InternetTariffPlan(String name, int licencseFee, int talkCost, int smsCost, int freeTraffik, int peopleUsed) throws LogicalException {
-        super(name,licencseFee,talkCost,smsCost,peopleUsed);
+    public InternetTariffPlan(String name, int licencseFee, int megabyteCost, int freeTraffik, int peopleUsed) throws LogicalException {
+        super(name,licencseFee,peopleUsed);
         setFreeTraffik(freeTraffik);
+        setMegabyteCost(megabyteCost);
     }
 
     public int getFreeTraffik() {
@@ -21,6 +25,14 @@ public class InternetTariffPlan extends AbstractTariffPlan {
         } else {
             throw new LogicalException();
         }
+    }
+
+    public int getMegabyteCost() {
+        return megabyteCost;
+    }
+
+    public void setMegabyteCost(int megabyteCost) {
+        this.megabyteCost = megabyteCost;
     }
 
     @Override
@@ -44,8 +56,7 @@ public class InternetTariffPlan extends AbstractTariffPlan {
 
     @Override
     public String toString() {
-        return super.toString() + "InternetTariffPlan{" +
-                "freeTraffik=" + freeTraffik +
-                '}';
+        return super.toString()  +
+                ", freeTraffik=" + freeTraffik;
     }
 }
