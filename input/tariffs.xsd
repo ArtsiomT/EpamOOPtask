@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema"
+                targetNamespace="http://www.example.com/tariffs"
+                xmlns:tns="http://www.example.com/tariffs"
+                elementFormDefault="qualified">
+                <element name="tariffs">
+                    <complexType>
+                        <sequence>
+                            <element ref="tns:tariff" minOccurs="1" maxOccurs="unbounded"/>
+                        </sequence>
+                    </complexType>
+                </element>
+               <element name="tariff" type="tns:Tariff" abstract="true"/>
+                <element name="talk-tariff" type="tns:TalkTariff" substitutionGroup="tns:tariff"/>
+                <element name="internet-tariff" type="tns:InternetTariff" substitutionGroup="tns:tariff"/>
+                <element name="business-tariff" type="tns:BusinessTariff" substitutionGroup="tns:talk-tariff"/>
+                <complexType name="Tariff" abstract="true">
+                    <sequence>
+                        <element name="license-fee" type="positiveInteger"/>
+                        <element name="people-used" type="positiveInteger"/>
+                    </sequence>
+                    <attribute name="name" type="tns:Name" use="required"/>
+                </complexType>
+                <complexType name="TalkTariff" abstract="false">
+                    <complexContent>
+                        <extension base="tns:Tariff">
+                            <sequence>
+                                <element name="free-minutes" type="positiveInteger"/>
+                                <element name="talk-cost" type="positiveInteger"/>
+                                <element name="sms-cost" type="positiveInteger" />
+                            </sequence>
+                        </extension>
+                    </complexContent>
+                </complexType>
+                <complexType name="InternetTariff" abstract="false">
+                    <complexContent>
+                        <extension base="tns:Tariff">
+                            <sequence>
+                                <element name="free-traffik" type="positiveInteger" />
+                                <element name="megabyte-cost" type="positiveInteger"/>
+                            </sequence>
+                        </extension>
+                    </complexContent>
+                </complexType>
+                <complexType name="BusinessTariff">
+                    <complexContent>
+                        <extension base="tns:TalkTariff">
+                            <sequence>
+                                 <element name="free-traffik" type="positiveInteger" />
+                                 <element name="megabyte-cost" type="positiveInteger"/>
+                            </sequence>
+                        </extension>
+                    </complexContent>
+                </complexType>
+
+        <simpleType name="Name">
+            <restriction base="ID">
+                   <pattern value="[а-яА-ЯёЁa-zA-Z0-9]{1,15}" />
+            </restriction>
+        </simpleType>
+        </schema>

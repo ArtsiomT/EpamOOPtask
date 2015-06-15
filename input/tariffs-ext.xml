@@ -1,0 +1,34 @@
+<tariffs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://www.example.com/tariffs"
+         xsi:schemaLocation="http://www.example.com/tariffs tariffs.xsd">
+
+        <talk-tariff name="Всеговорят">
+            <license-fee>37700</license-fee>
+            <people-used>56000</people-used>
+            <free-minutes>100</free-minutes>
+            <talk-cost>399</talk-cost>
+            <sms-cost>350</sms-cost>
+        </talk-tariff>
+        <internet-tariff name="Пакет1500">
+            <license-fee>69900</license-fee>
+            <people-used>75000</people-used>
+            <free-traffik>1500</free-traffik>
+            <megabyte-cost>288</megabyte-cost>
+        </internet-tariff>
+        <business-tariff name="Smart1">
+            <license-fee>109900</license-fee>
+            <people-used>250000</people-used>
+            <free-minutes>200</free-minutes>
+            <talk-cost>365</talk-cost>
+            <sms-cost>350</sms-cost>
+            <free-traffik>1024</free-traffik>
+            <megabyte-cost>30</megabyte-cost>
+        </business-tariff>
+        <talk-tariff name="Всеtojeговорят">
+        <license-fee>37700</license-fee>
+        <people-used>56000</people-used>
+        <free-minutes>100</free-minutes>
+        <talk-cost>399</talk-cost>
+        <sms-cost>350</sms-cost>
+        </talk-tariff>
+</tariffs>
